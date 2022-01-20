@@ -20,9 +20,21 @@ const invalidLogin = {
   message: 'Incorrect username or password',
 };
 
+const invalidEntriesRecipes = {
+  status: StatusCodes.BAD_REQUEST,
+  message: 'Invalid entries. Try again.',
+};
+
+const invalidToken = {
+  status: StatusCodes.UNAUTHORIZED,
+  message: 'jwt malformed',
+};
+
 module.exports = {
   alreadyExists,
   required,
   invalidLogin,
   mustBefilled,
+  invalidEntriesRecipes,
+  invalidToken,
 };

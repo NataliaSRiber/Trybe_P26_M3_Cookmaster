@@ -13,6 +13,17 @@ const genToken = (data) => {
   return token;
 };
 
+const verifyToken = (token) => {
+  try {
+    const decoded = jwt.verify(token, API_SECRET); // sem o segredo o token não é decodificado
+    const user = decoded.data;
+    return user;
+  } catch (err) {
+    return null;
+  }
+};
+
 module.exports = {
   genToken,
+  verifyToken,
 };

@@ -18,7 +18,8 @@ module.exports = async (user) => {
   }
   
   const { _id, email, role } = findUser;
+  const userWPassword = { _id, email, role };
 
-  const token = genToken(_id, email, role);
+  const token = genToken(userWPassword);
   return { status: StatusCodes.OK, message: token };
 };
