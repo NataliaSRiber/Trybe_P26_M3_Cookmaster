@@ -10,7 +10,19 @@ const alreadyExists = {
   message: 'Email already registered',
 };
 
+const mustBefilled = {
+  status: StatusCodes.UNAUTHORIZED,
+  message: 'All fields must be filled',
+};
+
+const invalidLogin = {
+  status: StatusCodes.UNAUTHORIZED,
+  message: 'Incorrect username or password',
+};
+
 module.exports = {
   alreadyExists,
   required,
+  invalidLogin,
+  mustBefilled,
 };

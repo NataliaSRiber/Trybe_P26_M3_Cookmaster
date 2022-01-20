@@ -2,7 +2,7 @@
 const { StatusCodes } = require('http-status-codes');
 const ModelUsers = require('../../models/users');
 const { alreadyExists, required } = require('../../utilities/setErrors');
-const { validateUser } = require('./validation');
+const { validateUser } = require('./validations');
 
 module.exports = async (user) => {
   const findUser = await ModelUsers.find(user);
