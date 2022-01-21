@@ -30,6 +30,11 @@ const invalidToken = {
   message: 'jwt malformed',
 };
 
+const wrongRecipeId = {
+  status: StatusCodes.NOT_FOUND,
+  message: 'recipe not found',
+};
+
 module.exports = {
   alreadyExists,
   required,
@@ -37,4 +42,5 @@ module.exports = {
   mustBefilled,
   invalidEntriesRecipes,
   invalidToken,
+  wrongRecipeId,
 };
