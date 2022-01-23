@@ -28,6 +28,7 @@ module.exports = async (recipe, id, user) => {
   }
   
   await ModelRecipes.update(recipe, id);
+  
   const updatedRecipe = await ModelRecipes.find(id);
     
   return { status: StatusCodes.OK, message: updatedRecipe };
