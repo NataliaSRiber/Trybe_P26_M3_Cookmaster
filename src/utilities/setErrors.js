@@ -35,6 +35,16 @@ const wrongRecipeId = {
   message: 'recipe not found',
 };
 
+const missingToken = {
+  status: StatusCodes.UNAUTHORIZED,
+  message: 'missing auth token',
+};
+
+const notUserRecipe = {
+  status: StatusCodes.UNAUTHORIZED,
+  message: 'You cannot update this recipe',
+};
+
 module.exports = {
   alreadyExists,
   required,
@@ -43,4 +53,6 @@ module.exports = {
   invalidEntriesRecipes,
   invalidToken,
   wrongRecipeId,
+  missingToken,
+  notUserRecipe,
 };

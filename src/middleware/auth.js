@@ -1,11 +1,11 @@
 const { verifyToken } = require('../services/auth/auth');
-const { invalidToken } = require('../utilities/setErrors');
+const { invalidToken, missingToken } = require('../utilities/setErrors');
 
 module.exports = (req, res, next) => {
   const { authorization: token } = req.headers;
   
   if (!token) {
-    return res.status(invalidToken.status).json({ message: 'Missing auth token' });
+    return res.status(invalidToken.status).json({ message: missingToken.message });
   }
    
   const user = verifyToken(token);
